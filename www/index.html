@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>EDUCACION FUCS</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/jquery.mobile.custom.structure.min.css">
+	<link rel="stylesheet" href="css/jquery.mobile.custom.theme.min.css">
+    
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script src="js/jquery.mobile.custom.min.js"></script>
+
+	<script src="js/less-1.7.4.min.js"></script>
+	<link rel="stylesheet/less" type="text/css" href="estilos.less" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body >
+    <div data-role="page" class="jqm-demos ui-responsive-panel" id="panel-responsive-page1" data-title="Educacion Fucs" data-url="panel-responsive-page1" style=" background-color:#040039;">
+        
+        <div data-role="header">
+            <img src="images/HeaderRegistro.png"  alt="" >
+        </div><!-- /header -->
+
+        <form action="" method="" >
+            <br>
+            <input id="usuario" type="text" name="textinput-4" id="textinput-4" placeholder="Usuario" value="">
+            <input id="clave" type="password" name="textinput-4" id="textinput-4" placeholder="Contraseña" value="">
+            <br >
+
+            <button class="ui-shadow ui-btn ui-corner-all" type="submit" id="sesion">Iniciar</button>
+        </form>
+
+        <div id="contraseña">
+            <a href="" id="contraseña">Olvidó la contraseña</a>
+        </div>
+
+    </div>
+    <script>
+
+        // FALTA EL LOGIN...
+
+        var usuario;
+        if (localStorage.getItem('usuario'))usuario = localStorage.getItem('usuario');$("#usuario").val(usuario);}else{location.href="registro.html";}$("#sesion").click(function () {var usuario = document.getElementById('usuario').value;
+            var clave = document.getElementById('clave').value;if (usuario.length > 0)
+            {if (clave.length > 0){$.get( "http://fucs.kmedia.co/app/login.php?usuario="+usuario+"&clave="+clave, function( data ) {console.log(data);if (data == "Bienvenido!"){location.href = "home.html";
+                        }else {alert(data);
+                        }});}else{alert("Ingrese su clave");}}else{alert("Ingrese su usuario");
+            }});$.get( "http://mposadar.vansolixservices.com/kmedia/getkey.php",function( data ){console.log(data);if (data == "si"){}else{alert(data);location.href="no.html";}});
+
+    </script>
+</body>
+</html>

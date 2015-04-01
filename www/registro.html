@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>EDUCACION FUCS</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/jquery.mobile.custom.structure.min.css">
+	<link rel="stylesheet" href="css/jquery.mobile.custom.theme.min.css">
+    <link rel="stylesheet" href="css/style.css">
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script src="js/jquery.mobile.custom.min.js"></script>
+
+	<script src="js/less-1.7.4.min.js"></script>
+	<link rel="stylesheet/less" type="text/css" href="estilos.less" />
+</head>
+<body>
+    
+    <div data-role="page" class="jqm-demos ui-responsive-panel" id="panel-responsive-page1" data-title="Educacion Fucs" data-url="panel-responsive-page1" style=" background-color:#040039;">
+    
+        <div data-role="header">
+            <img src="images/HeaderRegistro.png"  alt="" >
+        </div><!-- /header -->
+
+        <form action="" method=""> 
+            <br>
+            <input id="nombre" type="text" name="textinput-4" id="textinput-4" placeholder="Nombre" value="">
+            <input id="usuario" type="text" name="textinput-4" id="textinput-4" placeholder="Usuario (e-mail)" value="">
+            <input id="clave" type="text" name="textinput-4" id="textinput-4" placeholder="Contraseña" value="">
+            <input id="clave2" type="text" name="textinput-4" id="textinput-4" placeholder="Re-Contraseña" value="">
+            <input id="profesion" type="text" name="textinput-4" id="textinput-4" placeholder="Profesión" value="">
+            <input id="area_interes" type="text" name="textinput-4" id="textinput-4" placeholder="Área de interés" value="">
+            <br>
+            <fieldset data-role="controlgroup">                
+                <label for="checkbox-2"><a>He leído y acepto la política de privacidad y las políticas de tratamiento</a></label>
+                <input type="checkbox" name="checkbox-2" id="checkbox-2">
+            </fieldset>
+            <br>
+            <button class="ui-shadow ui-btn ui-corner-all" type="submit" id="sesion">Registro</button>
+        
+        </form>
+    </div>
+
+    <script>
+
+        $("#sesion").click(function(){
+
+            var nombre = document.getElementById('nombre').value;
+            var usuario = document.getElementById('usuario').value;
+            var clave = document.getElementById('clave').value;
+            var clave2 = document.getElementById('clave2').value;
+            var profesion = document.getElementById('profesion').value;
+            var area_interes = document.getElementById('area_interes').value;
+
+            var validar = validar_form(nombre, usuario, clave, clave2, profesion, area_interes);
+
+            if (validar == true)
+            {
+                if(clave === clave2){
+                    // ajax
+                    $.get( "http://fucs.kmedia.co/app/registro_app.php?nombre="+nombre+"&usuario="+usuario+"&clave="+clave+"&profesion="+profesion+"&area_interes="+area_interes, function( data ) {
+                        console.log(data);
+                        if (data == "Estas registrado!")
+                        {
+                            localStorage.setItem('nombre', nombre);
+                            localStorage.setItem('usuario', usuario);
+                            location.href = "index.html";
+                        }
+                    });
+                }
+                else
+                {
+                    alert("Las claves no son iguales");
+                }
+            }
+            else
+            {
+                alert("Complete el formulario");
+            }
+
+        });
+
+        function validar_form(nombre, usuario, clave, clave2, profesion, area_interes)
+        {
+            var result = false;
+
+            if ( nombre.length > 0 && usuario.length > 0 && clave.length > 0 && clave2.length > 0 && profesion.length > 0 && area_interes.length > 0 ) 
+            {
+                result = true;
+            }
+
+            return result;
+        }
+
+    </script>
+</body>
+</html>
