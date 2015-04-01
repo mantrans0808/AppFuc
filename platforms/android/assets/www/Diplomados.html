@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+	<title>EDUCACION FUCS</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1 s">
+<head>
+	<link rel="stylesheet" href="css/jquery.mobile.custom.structure.min.css">
+	<link rel="stylesheet" href="css/jquery.mobile.custom.theme.min.css">
+    <link rel="stylesheet" href="css/style.css">
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script src="js/jquery.mobile.custom.min.js"></script>
+
+	<script src="js/less-1.7.4.min.js"></script>
+	<link rel="stylesheet/less" type="text/css" href="estilos.less" />
+
+</head>
+<body>
+    
+
+   <div data-role="page" class="jqm-demos ui-responsive-panel" id="panel-responsive-page1" data-title="Educacion Fucs" data-url="panel-responsive-page1">
+    <div data-role="header">
+        <img src="images/Header.png"  alt="" >
+        <a href="#nav-panel"  data-iconpos="notext" id="bars"><img src="images/Icomenu.png"> </a>
+        <img src="images/Diplomados/titulo.png">
+                <div class="search"><img src="images/Buscar.png" > </div>
+        
+        <div class="">
+            <a class="submenu3" id="medicos">
+                <img src="images/Cursos/Medicos.jpg"> 
+            </a>
+            <a class="submenu1" id="enfermeras">
+                <img src="images/Cursos/enfermeras.jpg"> 
+            </a>
+            <a class="submenu2" id="clinicos">
+                <img src="images/Cursos/clinicos.jpg"> 
+            </a>
+            <a class="submenu3" id="laboratorio">
+                <img src="images/Cursos/laboratorio.jpg"> 
+            </a>
+            <a class="submenu3" id="administrativos">
+                <img src="images/Cursos/administrativos.jpg"> 
+            </a>
+        </div>
+
+    </div><!-- /header -->
+  
+
+    <div role="main" class="ui-content jqm-content jqm-fullwidth">
+        
+    <div data-role="home">
+
+	<div data-role="content">
+
+         <div id="formulario_inscripcion" style="display:none;">
+            <div>
+                <div data-role="content" class="ui-content" role="main">
+                    <p>Realiza nuestra preinscripcion</p>
+                <form action="" method=""> 
+                   <p>Datos</p>
+                    <div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset">
+                        <input id="nombres_apellidos" type="text" name="textinput-4" id="textinput-4" placeholder="Nombres Apellidos" value="">
+                    </div>
+                    <div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset">
+                        <input id="num_documento" type="text" name="textinput-4" id="textinput-4" placeholder="Documento de identidad" value="">
+                    </div>
+                    <div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset">
+                        <input id="email" type="text" name="textinput-4" id="textinput-4" placeholder="Email" value="">
+                    </div>
+                    <div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset">
+                        <input id="telefono" type="text" name="textinput-4" id="textinput-4" placeholder="Telefono" value="">
+                    </div>
+                    <div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset">
+                        <input id="datos_curso" type="text" name="textinput-4" id="textinput-4" placeholder="Datos del curso" value="">
+                    </div>
+                
+                    <textarea id="comentarios" name="comentarios" rows="10" cols="40" placeholder="Mensaje" class="ui-input-text ui-shadow-inset ui-body-inherit ui-corner-all ui-textinput-autogrow" style="height: 51px;"></textarea>
+
+                    <br>
+                    <button onclick="guardar_inscripcion();" class="ui-btn ui-shadow ui-corner-all" type="submit" id="sesion">Enviar</button>
+                    <button class="ui-btn ui-shadow ui-corner-all" type="submit" id="sesion">Borrar</button>
+                    
+                
+                </form>
+            </div>
+        </div>
+        </div>
+
+        <div id="diplomadosinterna" style="display:none;"></div>
+
+        <div id="diplomado_medicina"></div>
+        <div id="diplomado_enfermeria" style="display:none;"></div>
+        <div id="diplomado_instrumentacion" style="display:none;"></div>
+        <div id="diplomado_administrativo" style="display:none;"></div>
+
+        <script>
+
+            $("#diplomado_medicina").load('http://fucs.kmedia.co/app/diplomados.php', 
+                {FACULTAD:'Facultad de Medicina'}, function(){});
+
+            $("#diplomado_enfermeria").load('http://fucs.kmedia.co/app/diplomados.php', 
+                {FACULTAD:'Facultad de Enfermería'}, function(){});
+
+            $("#diplomado_instrumentacion").load('http://fucs.kmedia.co/app/diplomados.php', 
+                {FACULTAD:'Facultad de Instrumentación Quirúrgica'}, function(){});
+
+            $("#diplomado_administrativo").load('http://fucs.kmedia.co/app/diplomados.php', 
+                {FACULTAD:'Facultad de Ciencias Sociales - Administrativos y Económicos'}, function(){});
+
+            $("#medicos").click(function(){
+                $("#diplomado_medicina").show();
+                $("#diplomado_enfermeria").hide();
+                $("#diplomado_instrumentacion").hide();
+                $("#diplomado_administrativo").hide();
+                $("#diplomadosinterna").hide();
+                $("#formulario_inscripcion").hide();
+            });
+
+            $("#enfermeras").click(function(){
+                $("#diplomado_medicina").hide();
+                $("#diplomado_enfermeria").show();
+                $("#diplomado_instrumentacion").hide();
+                $("#diplomado_administrativo").hide();
+                $("#diplomadosinterna").hide();
+                $("#formulario_inscripcion").hide();
+            });
+
+            $("#clinicos").click(function(){
+                $("#diplomado_medicina").hide();
+                $("#diplomado_enfermeria").hide();
+                $("#diplomado_instrumentacion").show();
+                $("#diplomado_administrativo").hide();
+                $("#diplomadosinterna").hide();
+                $("#formulario_inscripcion").hide();
+            });
+
+            $("#laboratorio").click(function(){
+                $("#diplomado_medicina").hide();
+                $("#diplomado_enfermeria").hide();
+                $("#diplomado_instrumentacion").show();
+                $("#diplomado_administrativo").hide();
+                $("#diplomadosinterna").hide();
+                $("#formulario_inscripcion").hide();
+            });
+
+            $("#administrativos").click(function(){
+                $("#diplomado_medicina").hide();
+                $("#diplomado_enfermeria").hide();
+                $("#diplomado_instrumentacion").hide();
+                $("#diplomado_administrativo").show();
+                $("#diplomadosinterna").hide();
+                $("#formulario_inscripcion").hide();
+            });
+
+            function internadiplomados(id, facultad)
+            {
+                
+                $("#diplomado_medicina").hide();
+                $("#diplomado_enfermeria").hide();
+                $("#diplomado_instrumentacion").hide();
+                $("#diplomado_administrativo").hide();
+                $("#formulario_inscripcion").hide();
+
+                $("#diplomadosinterna").show();
+
+                $("#diplomadosinterna").load('http://fucs.kmedia.co/app/diplomado_interna.php', {FACULTAD:facultad, POST_ID:id}, function(){});
+
+                $("#datos_curso").val(facultad + " - ");
+
+            }
+
+            $("#nombres_apellidos").val(localStorage.getItem('nombre'));
+
+            function frm_inscripcion(){
+
+                $("#cursosinterna").hide();
+                $("#formulario_inscripcion").show();
+
+            };
+
+            function guardar_inscripcion()
+            {
+                var nombres_apellidos = document.getElementById("nombres_apellidos").value;
+                var num_documento = document.getElementById("num_documento").value;
+                var email = document.getElementById("email").value;
+                var telefono = document.getElementById("telefono").value;
+                var datos_curso = document.getElementById("datos_curso").value;
+                var comentarios = document.getElementById("comentarios").value;
+
+                if( nombres_apellidos.length > 0 && num_documento.length > 9 && email.length )
+                {
+                    $.get( "http://fucs.kmedia.co/app/inscripciones.php?nombres_apellidos="+nombres_apellidos+"&num_documento="+num_documento+"&email="+email+"&telefono="+telefono+"&datos_curso="+datos_curso+"&comentarios="+comentarios, function( data ) {
+
+                            alert(data);
+                            if (data == "Gracias!")
+                            {
+                                location.href = "cursos.html";
+                            }
+
+                    });
+                }
+                else
+                {
+                    alert("Complete el formulario");
+                }
+
+            }
+
+        </script> 
+            
+        
+	</div>
+
+  </div>
+   
+<div data-role="footer" data-position="fixed">
+       <div data-role="navbar">
+        <ul>
+            <li><a href="Novedades.html">Novedades</a></li>
+            <li><a href="PQR.html">PQR</a></li>
+            <li><a href="ubicacion.html">Sedes</a></li>
+        </ul>
+    </div><!-- /navbar -->
+</div>
+        </div>
+
+    
+   <div data-role="panel" data-display="push" data-theme="a" id="nav-panel">
+           <ul data-role="listview">
+            
+                <li><a href="index.html">Home</a></li>
+                <li><a href="educacioncontinua.html">Educación Continuada</a></li>
+                <li><a href="Diplomados.html">Diplomados</a></li>
+                <li><a href="cursos.html">Cursos</a></li>
+                <li><a href="congresos.html">Congresos</a></li>
+                <li><a href="ProgramaExtension.html">Programas Extensión</a></li>
+                <li><a href="ProgramasMedida.html">Programas a la medida</a></li>
+               <li><a href="Programate.html">Programate</a></li>
+               <li data-icon="delete"><a href="#" data-rel="close">Cerrar</a></li>
+        
+                
+        
+        </ul>
+    </div><!-- /panel -->
+   
+
+	 </div>
+
+     
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+    "version": "1.0.0",
+    "name": "com.phonegap.plugins.puship",
+    "cordova_name": "Puship",
+    "description": "\r\n\t\tThis plugin allows your application to receive push notifications on Android, iOS and WP8 devices.\r\n    Android uses Google Cloud Messaging.\r\n    iOS uses Apple APNS Notifications.\r\n    WP8 uses Microsoft MPNS Notifications.\r\n\t",
+    "license": "MIT",
+    "platforms": [
+        "android",
+        "amazon-fireos",
+        "ios",
+        "wp8"
+    ],
+    "engines": [
+        {
+            "name": "cordova",
+            "version": ">=3.0.0"
+        }
+    ]
+}

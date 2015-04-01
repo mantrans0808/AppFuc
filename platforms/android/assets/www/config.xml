@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+	<widget xmlns   = "http://www.w3.org/ns/widgets"
+		xmlns:gap   = "http://phonegap.com/ns/1.0"
+		id          = "co.kmedia.fucs"
+		versionCode = "1.0" 
+		version     = "1.0" >
+
+	<preference name="phonegap-version" value="3.5.0" />
+	<preference name="orientation" value="portrait" />
+
+	<preference name="target-device" value="handset" />
+
+	<preference name="StatusBarOverlaysWebView" value="true" />
+	<preference name="StatusBarBackgroundColor" value="#000000" />
+	<gap:plugin name="com.phonegap.plugin.statusbar" />
+
+	<icon src="icon.png" />
+
+	<icon src="res/icons/ios/icon-57-2x.png" gap:platform="ios" width="114" height="114" />
+	<icon src="res/icons/ios/icon-57.png" gap:platform="ios" width="57" height="57" />
+	<icon src="res/icons/ios/icon-72-2x.png" gap:platform="ios" width="144" height="144" />
+	<icon src="res/icons/ios/icon-72.png" gap:platform="ios" width="72" height="72" />
+
+	<icon src="res/icons/android/icon-36-ldpi.png" gap:platform="android" gap:qualifier="ldpi" />
+	<icon src="res/icons/android/icon-48-mdpi.png" gap:platform="android" gap:qualifier="mdpi" />
+	<icon src="res/icons/android/icon-72-hdpi.png" gap:platform="android" gap:qualifier="hdpi" />
+	<icon src="res/icons/android/icon-96-xhdpi.png" gap:platform="android" gap:qualifier="xhdpi" />
+
+	<icon src="res/icons/windows-phone/icon-48.png" gap:platform="winphone" />
+	<icon src="res/icons/windows-phone/icon-173-tile.png" gap:platform="winphone" gap:role="background" />
+
+
+	<name>EC FUCS</name>
+	<description>
+		App Móvil Educación Continuada - FUCS 
+	</description>
+	
+</widget>

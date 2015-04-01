@@ -1,0 +1,132 @@
+img{
+    width: 100%;
+    height: auto;
+}
+.home{
+    padding-top: 15%;
+}
+/*MENU*/
+#menu{
+    width: 31%;
+    height: auto;
+    display: block;
+    float: left;
+    padding-left: 3px;
+    padding-right: 1px;
+    padding-top: 3%;
+    padding-bottom: 5px;
+}
+#menu2{
+    width: 45%;
+    height: auto;
+    display: block;
+    float: left;
+    padding-left: 2.5%;
+    padding-right: 1px;
+    padding-top: 3%;
+    padding-bottom: 5px;
+}
+#bars{
+    height: 25%;
+    position: absolute;
+    top: 78%;
+    padding-bottom: 5%;
+    background-color: transparent;
+    padding: 0;
+    border: none;
+}
+#contraseña{
+    margin: 0 auto;
+    text-align: center;
+}
+#sesion{
+    background-color: #F9CC5D;
+}
+/*IMAGENES INTERNAS*/
+#imagen{
+  width: 100%;
+       
+}
+#logo{
+float: left;
+    width: 25%;
+}
+
+/*BOTONES*/
+#btinterno{
+    width: 50%;
+    background-color: #F9CC5D;
+    float: left;
+}
+#btcongreso{
+    font-size: 0.7em;
+    width: 33%;
+    background-color: #F9CC5D;
+    float: left;
+}
+
+/*SUBMENU - */
+
+.SubMenuCursos {
+    width: 33%;
+   
+}
+
+.submenu1{
+    float: left;
+    width: 20%;
+}
+.submenu2{
+    float: left;
+    width: 20%;
+}
+.submenu3{
+    float: left;
+    width: 20%;
+}
+.submenu4{
+ 
+    width: 20%;
+}
+/*TEXTO*/
+p{
+    font-size: 0.8em;
+    font-size-adjust: auto;
+    text-align: justify;
+}
+h4{
+    text-align: center;
+}
+/*ACCORDION*/
+
+.redes img{
+ float: left;
+        width: 50%;
+
+  
+}
+.redes{ float: left;      
+    position: absolute;   
+    left: 75%;
+    padding-top: 10%;
+    padding-bottom: 20%;
+     
+
+}
+.redes img{ float: left; 
+ 
+}
+
+}
+.ui-page { -webkit-backface-visibility: hidden; }
+.search{
+    width: 10%;
+    position: absolute;
+    top:77%;
+    left: 90%;
+ 
+}
+#custom-border-radius .ui-btn-icon-notext.ui-corner-all {
+    -webkit-border-radius: .3125em;
+    border-radius: .3125em;
+}

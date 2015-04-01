@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>EDUCACION FUCS</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/jquery.mobile.custom.structure.min.css">
+	<link rel="stylesheet" href="css/jquery.mobile.custom.theme.min.css">
+    <link rel="stylesheet" href="css/style.css">
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script src="js/jquery.mobile.custom.min.js"></script>
+
+	<script src="js/less-1.7.4.min.js"></script>
+	<link rel="stylesheet/less" type="text/css" href="estilos.less" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+
+
+</head>
+<body>
+    
+<div data-role="page" class="jqm-demos ui-responsive-panel" id="panel-responsive-page1" data-title="Educacion Fucs" data-url="panel-responsive-page1" >
+    
+    <div data-role="header">
+        <img src="images/Header.png"  alt="" >
+        <a href="#nav-panel"  data-iconpos="notext" id="bars"><img src="images/Icomenu.png"> </a>
+  <img src="images/extension/TituloMedida.png">
+                <div class="search"><img src="images/Buscar.png" > </div>
+       
+     
+    </div><!-- /header -->
+      <div role="main" class="ui-content jqm-content jqm-fullwidth">
+    <div data-role="home">
+	<div data-role="content">
+        <p>Solicita mas informacion de nuestros programas:</p>
+    <form action="" method=""> 
+       <p>Datos de entidad</p>
+        <input id="nombre" type="text" name="textinput-4" id="textinput-4" placeholder="Nombres Apellidos" value="">
+        <input id="email" type="text" name="textinput-4" id="textinput-4" placeholder="Email" value="">
+        <input id="telefono" type="text" name="textinput-4" id="textinput-4" placeholder="Telefono" value="">
+        <input id="datos_curso" type="text" name="textinput-4" id="textinput-4" placeholder="Datos del curso" value="">
+    
+        <textarea id="comentarios" name="comentarios" rows="10" cols="40" placeholder="Mensaje"></textarea>
+
+        <br>
+        <button class="ui-shadow ui-btn ui-corner-all" type="submit" id="sesion">Enviar</button>
+        <button class="ui-shadow ui-btn ui-corner-all" type="submit" id="sesion">Borrar</button>
+        
+    
+    </form>
+   
+
+	
+    <div data-role="footer" data-position="fixed">
+       <div data-role="navbar">
+        <ul>
+            <li><a href="Novedades.html">Novedades</a></li>
+            <li><a href="http://www.fucsalud.edu.co/index.php/es/pqrs">PQR</a></li>
+            <li><a href="ubicacion.html">Sedes</a></li>
+            
+        </ul>
+    </div><!-- /navbar -->
+</div>
+        </div>
+          </div>
+      </div>
+        <div data-role="panel" data-display="push" data-theme="a" id="nav-panel">
+       <ul data-role="listview">
+          
+                <li><a href="index.html">Home</a></li>
+                <li><a href="educacioncontinua.html">Educación Continuada</a></li>
+                <li><a href="Diplomados.html">Diplomados</a></li>
+                <li><a href="cursos.html">Cursos</a></li>
+                <li><a href="congresos.html">Congresos</a></li>
+                <li><a href="ProgramaExtension.html">Programas Extensión</a></li>
+                <li><a href="ProgramasMedida.html">Programas a la medida</a></li>
+           <li><a href="Programate.html">Programate</a></li>
+            <li data-icon="delete"><a href="#" data-rel="close">Cerrar</a></li>
+                
+        
+        </ul>
+    </div><!-- /panel -->
+
+    <script>
+
+    function guardar_inscripcion()
+      {
+          var nombre = document.getElementById("nombre").value;
+          var email = document.getElementById("email").value;
+          var telefono = document.getElementById("telefono").value;
+          var datos_curso = document.getElementById("datos_curso").value;
+          var comentarios = document.getElementById("comentarios").value;
+
+          if( nombres_apellidos.length > 0 && num_documento.length > 9 && email.length )
+          {
+              $.get( "http://fucs.kmedia.co/app/info.php?nombre="+nombre+"&email="+email+"&email="+email+"&telefono="+telefono+"&datos_curso="+datos_curso+"&comentarios="+comentarios, function( data ) {
+
+                      alert(data);
+                      if (data == "Gracias!")
+                      {
+                          location.href = "cursos.html";
+                      }
+
+              });
+          }
+          else
+          {
+              alert("Complete el formulario");
+          }
+
+      }
+
+    </script>
+  
+    </div>
+</body>
+</html> 

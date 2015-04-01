@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:amazon="http://schemas.android.com/apk/lib/com.amazon.device.ads"
+    id="com.phonegap.plugins.Puship"
+    version="1.0.0">
+
+  <name>Puship</name>
+	<author>SoftRay S.r.l.</author>
+
+	<description>
+		This plugin allows your application to receive push notifications on Android, iOS and WP8 devices.
+    Android uses Google Cloud Messaging.
+    iOS uses Apple APNS Notifications.
+    WP8 uses Microsoft MPNS Notifications.
+	</description>
+
+	<license>MIT</license>
+
+
+	<js-module src="www/PushNotification.js" name="PushNotification">
+        <clobbers target="PushNotification" />
+	</js-module>
+
+	<js-module src="www/PushipNotification.js" name="PushipNotification">
+        <clobbers target="PushipNotification" />
+	</js-module>
+
+	<engines>
+		<engine name="cordova" version=">=3.0.0" />
+	</engines>
+
+	<asset src="www/res" target="res" />
+	<!-- android -->
+	<platform name="android">
+
+		<config-file target="res/xml/config.xml" parent="/*">
+			<feature name="PushPlugin" >
+				<param name="android-package" value="com.plugin.gcm.PushPlugin"/>
+			</feature>
+		</config-file>
+
+		<config-file target="AndroidManifest.xml" parent="/manifest">
+			<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+			<uses-permission android:name="android.permission.GET_ACCOUNTS" />
+			<uses-permission android:name="android.permission.WAKE_LOCK" />
+			<uses-permission android:name="android.permission.VIBRATE"/>
+			<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+			<permission android:name="$PACKAGE_NAME.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+			<uses-permission android:name="$PACKAGE_NAME.permission.C2D_MESSAGE" />
+		</config-file>
+
+		<config-file target="AndroidManifest.xml" parent="/manifest/application">
+			<activity android:name="com.plugin.gcm.PushHandlerActivity" android:exported="true"/>
+			<receiver android:name="com.plugin.gcm.CordovaGCMBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND" >
+				<intent-filter>
+					<action android:name="com.google.android.c2dm.intent.RECEIVE" />
+					<action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+					<category android:name="$PACKAGE_NAME" />
+				</intent-filter>
+			</receiver>
+			<service android:name="com.plugin.gcm.GCMIntentService" />
+		</config-file>
+
+		<source-file src="src/android/libs/gcm.jar" target-dir="libs/" />
+		<source-file src="src/android/com/plugin/gcm/CordovaGCMBroadcastReceiver.java" target-dir="src/com/plugin/gcm/" />
+		<source-file src="src/android/com/plugin/gcm/GCMIntentService.java" target-dir="src/com/plugin/gcm/" />
+		<source-file src="src/android/com/plugin/gcm/PushHandlerActivity.java" target-dir="src/com/plugin/gcm/" />
+		<source-file src="src/android/com/plugin/gcm/PushPlugin.java" target-dir="src/com/plugin/gcm/" />
+		<source-file src="src/android/com/plugin/android-support-v13.jar" target-dir="libs/" />
+
+	</platform>
+
+    <!-- amazon-fireos -->
+	<platform name="amazon-fireos">
+
+		<config-file target="res/xml/config.xml" parent="/*">
+			<feature name="PushPlugin" >
+				<param name="android-package" value="com.amazon.cordova.plugin.PushPlugin"/>
+			</feature>
+            <preference name="showmessageinnotification" value="true" />
+            <preference name="defaultnotificationmessage" value="You have a new message." />
+		</config-file>
+        
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <!-- This permission ensures that no other application can intercept your ADM messages. "[YOUR PACKAGE NAME]" is your package name as defined in your <manifest> tag. -->
+            <permission android:name="$PACKAGE_NAME.permission.RECEIVE_ADM_MESSAGE" android:protectionLevel="signature" />
+            <uses-permission android:name="$PACKAGE_NAME.permission.RECEIVE_ADM_MESSAGE" />
+            <!-- This permission allows your app access to receive push notifications from ADM. -->
+            <uses-permission android:name="com.amazon.device.messaging.permission.RECEIVE" />
+            <!-- ADM uses WAKE_LOCK to keep the processor from sleeping when a message is received. -->
+            <uses-permission android:name="android.permission.WAKE_LOCK" />
+		</config-file>
+
+		<config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <!-- You must explicitly enable ADM and declare whether your app cannot work without ADM (android:required="true") or can work without ADM (android:required="false").
+            If you specify android:required="false", your app must degrade gracefully if ADM
+            is unavailable. -->
+            <amazon:enable-feature android:name="com.amazon.device.messaging" android:required="true"/>
+			<service android:exported="false" android:name="com.amazon.cordova.plugin.ADMMessageHandler" />
+            <activity android:exported="true" android:name="com.amazon.cordova.plugin.ADMHandlerActivity" />
+            <receiver android:name="com.amazon.cordova.plugin.ADMMessageHandler$Receiver" android:permission="com.amazon.device.messaging.permission.SEND">
+                <intent-filter>
+                    <action android:name="com.amazon.device.messaging.intent.REGISTRATION" />
+                    <action android:name="com.amazon.device.messaging.intent.RECEIVE" />
+                    <category android:name="$PACKAGE_NAME" />
+                </intent-filter>
+            </receiver>		
+        </config-file>
+        
+        <source-file src="src/amazon/PushPlugin.java" target-dir="src/com/amazon/cordova/plugin" />
+        <source-file src="src/amazon/ADMMessageHandler.java" target-dir="src/com/amazon/cordova/plugin" />
+        <source-file src="src/amazon/ADMHandlerActivity.java" target-dir="src/com/amazon/cordova/plugin" />
+       		
+	</platform>
+
+	<!-- ios -->
+	<platform name="ios">
+
+		<config-file target="config.xml" parent="/*">
+			<feature name="PushPlugin">
+				<param name="ios-package" value="PushPlugin"/>
+			</feature>
+		</config-file>
+
+		<source-file src="src/ios/AppDelegate+notification.m" />
+		<source-file src="src/ios/PushPlugin.m" />
+
+		<header-file src="src/ios/AppDelegate+notification.h" />
+		<header-file src="src/ios/PushPlugin.h" />		
+
+		<resource-file src="www/res/sounds/abduction.mp3" target="Resources/abduction.mp3" />
+		<resource-file src="www/res/sounds/ache.mp3" target="Resources/ache.mp3" />
+		<resource-file src="www/res/sounds/a-ha-moment.mp3" target="Resources/a-ha-moment.mp3" />
+		<resource-file src="www/res/sounds/all-of-a-sudden.mp3" target="Resources/all-of-a-sudden.mp3" />
+		<resource-file src="www/res/sounds/are-you-kidding.mp3" target="Resources/are-you-kidding.mp3" />
+		<resource-file src="www/res/sounds/argh-my-eyes.mp3" target="Resources/argh-my-eyes.mp3" />
+		<resource-file src="www/res/sounds/a-taste-of-the-whip.mp3" target="Resources/a-taste-of-the-whip.mp3" />
+		<resource-file src="www/res/sounds/attracted.mp3" target="Resources/attracted.mp3" />
+		<resource-file src="www/res/sounds/awareness.mp3" target="Resources/awareness.mp3" />
+		<resource-file src="www/res/sounds/base.mp3" target="Resources/base.mp3" />
+		<resource-file src="www/res/sounds/blocker.mp3" target="Resources/blocker.mp3" />
+		<resource-file src="www/res/sounds/braking.mp3" target="Resources/braking.mp3" />
+		<resource-file src="www/res/sounds/cable-unplugged.mp3" target="Resources/cable-unplugged.mp3" />
+		<resource-file src="www/res/sounds/cause-and-effect.mp3" target="Resources/cause-and-effect.mp3" />
+		<resource-file src="www/res/sounds/chafing.mp3" target="Resources/chafing.mp3" />
+		<resource-file src="www/res/sounds/closed.mp3" target="Resources/closed.mp3" />
+		<resource-file src="www/res/sounds/code.mp3" target="Resources/code.mp3" />
+		<resource-file src="www/res/sounds/coins.mp3" target="Resources/coins.mp3" />
+		<resource-file src="www/res/sounds/come-to-daddy.mp3" target="Resources/come-to-daddy.mp3" />
+		<resource-file src="www/res/sounds/communication-channel.mp3" target="Resources/communication-channel.mp3" />
+		<resource-file src="www/res/sounds/credulous.mp3" target="Resources/credulous.mp3" />
+		<resource-file src="www/res/sounds/croak.mp3" target="Resources/croak.mp3" />
+		<resource-file src="www/res/sounds/cyberincident.mp3" target="Resources/cyberincident.mp3" />
+		<resource-file src="www/res/sounds/decay.mp3" target="Resources/decay.mp3" />
+		<resource-file src="www/res/sounds/does-not-behave.mp3" target="Resources/does-not-behave.mp3" />
+		<resource-file src="www/res/sounds/dropped-spinner.mp3" target="Resources/dropped-spinner.mp3" />
+		<resource-file src="www/res/sounds/electronic.mp3" target="Resources/electronic.mp3" />
+		<resource-file src="www/res/sounds/end-point-reached.mp3" target="Resources/end-point-reached.mp3" />
+		<resource-file src="www/res/sounds/error-3.mp3" target="Resources/error-3.mp3" />
+		<resource-file src="www/res/sounds/et-voila.mp3" target="Resources/et-voila.mp3" />
+		<resource-file src="www/res/sounds/fallbackring.ogg" target="Resources/fallbackring.ogg" />
+		<resource-file src="www/res/sounds/fallin.mp3" target="Resources/fallin.mp3" />
+		<resource-file src="www/res/sounds/fast-turnaround.mp3" target="Resources/fast-turnaround.mp3" />
+		<resource-file src="www/res/sounds/finger-push.mp3" target="Resources/finger-push.mp3" />
+		<resource-file src="www/res/sounds/genuinely-interested.mp3" target="Resources/genuinely-interested.mp3" />
+		<resource-file src="www/res/sounds/gets-in-the-way.mp3" target="Resources/gets-in-the-way.mp3" />
+		<resource-file src="www/res/sounds/good-morning.mp3" target="Resources/good-morning.mp3" />
+		<resource-file src="www/res/sounds/gummy-sweep.mp3" target="Resources/gummy-sweep.mp3" />
+		<resource-file src="www/res/sounds/happy-ending.mp3" target="Resources/happy-ending.mp3" />
+		<resource-file src="www/res/sounds/hey-im-here-too.mp3" target="Resources/hey-im-here-too.mp3" />
+		<resource-file src="www/res/sounds/hiccup.mp3" target="Resources/hiccup.mp3" />
+		<resource-file src="www/res/sounds/inquisitiveness.mp3" target="Resources/inquisitiveness.mp3" />
+		<resource-file src="www/res/sounds/in-your-plate.mp3" target="Resources/in-your-plate.mp3" />
+		<resource-file src="www/res/sounds/i-saw-you.mp3" target="Resources/i-saw-you.mp3" />
+		<resource-file src="www/res/sounds/job-done.mp3" target="Resources/job-done.mp3" />
+		<resource-file src="www/res/sounds/jubilation.mp3" target="Resources/jubilation.mp3" />
+		<resource-file src="www/res/sounds/just-like-magic.mp3" target="Resources/just-like-magic.mp3" />
+		<resource-file src="www/res/sounds/just-like-that.mp3" target="Resources/just-like-that.mp3" />
+		<resource-file src="www/res/sounds/knob.mp3" target="Resources/knob.mp3" />
+		<resource-file src="www/res/sounds/long-chime-sound.mp3" target="Resources/long-chime-sound.mp3" />
+		<resource-file src="www/res/sounds/machine-poo.mp3" target="Resources/machine-poo.mp3" />
+		<resource-file src="www/res/sounds/may-i-have-your-attention.mp3" target="Resources/may-i-have-your-attention.mp3" />
+		<resource-file src="www/res/sounds/me.mp3" target="Resources/me.mp3" />
+		<resource-file src="www/res/sounds/munchausen.mp3" target="Resources/munchausen.mp3" />
+		<resource-file src="www/res/sounds/net.mp3" target="Resources/net.mp3" />
+		<resource-file src="www/res/sounds/no-trespassing.mp3" target="Resources/no-trespassing.mp3" />
+		<resource-file src="www/res/sounds/no-way.mp3" target="Resources/no-way.mp3" />
+		<resource-file src="www/res/sounds/oh-really.mp3" target="Resources/oh-really.mp3" />
+		<resource-file src="www/res/sounds/on-serious-matters.mp3" target="Resources/on-serious-matters.mp3" />
+		<resource-file src="www/res/sounds/oringz-pack-nine-15.mp3" target="Resources/oringz-pack-nine-15.mp3" />
+		<resource-file src="www/res/sounds/pedantic.mp3" target="Resources/pedantic.mp3" />
+		<resource-file src="www/res/sounds/pizzicato.mp3" target="Resources/pizzicato.mp3" />
+		<resource-file src="www/res/sounds/pluck.mp3" target="Resources/pluck.mp3" />
+		<resource-file src="www/res/sounds/professionals.mp3" target="Resources/professionals.mp3" />
+		<resource-file src="www/res/sounds/pull-back.mp3" target="Resources/pull-back.mp3" />
+		<resource-file src="www/res/sounds/put-down.mp3" target="Resources/put-down.mp3" />
+		<resource-file src="www/res/sounds/question-raised.mp3" target="Resources/question-raised.mp3" />
+		<resource-file src="www/res/sounds/scissors.mp3" target="Resources/scissors.mp3" />
+		<resource-file src="www/res/sounds/see-im-smart.mp3" target="Resources/see-im-smart.mp3" />
+		<resource-file src="www/res/sounds/served.mp3" target="Resources/served.mp3" />
+		<resource-file src="www/res/sounds/shut-your-mouth.mp3" target="Resources/shut-your-mouth.mp3" />
+		<resource-file src="www/res/sounds/slap.mp3" target="Resources/slap.mp3" />
+		<resource-file src="www/res/sounds/solemn.mp3" target="Resources/solemn.mp3" />
+		<resource-file src="www/res/sounds/strongly-attached.mp3" target="Resources/strongly-attached.mp3" />
+		<resource-file src="www/res/sounds/surprise-on-a-spring.mp3" target="Resources/surprise-on-a-spring.mp3" />
+		<resource-file src="www/res/sounds/swift.mp3" target="Resources/swift.mp3" />
+		<resource-file src="www/res/sounds/thats-a-no.mp3" target="Resources/thats-a-no.mp3" />
+		<resource-file src="www/res/sounds/thats-nasty.mp3" target="Resources/thats-nasty.mp3" />
+		<resource-file src="www/res/sounds/the-squeaky-wheel-gets-the-grease.mp3" target="Resources/the-squeaky-wheel-gets-the-grease.mp3" />
+		<resource-file src="www/res/sounds/trained.mp3" target="Resources/trained.mp3" />
+		<resource-file src="www/res/sounds/what.mp3" target="Resources/what.mp3" />
+		<resource-file src="www/res/sounds/whatever.mp3" target="Resources/whatever.mp3" />
+		<resource-file src="www/res/sounds/will-you.mp3" target="Resources/will-you.mp3" />
+		<resource-file src="www/res/sounds/worthwhile.mp3" target="Resources/worthwhile.mp3" />
+		<resource-file src="www/res/sounds/yep.mp3" target="Resources/yep.mp3" />
+		<resource-file src="www/res/sounds/you-know.mp3" target="Resources/you-know.mp3" />
+		<resource-file src="www/res/sounds/your-turn.mp3" target="Resources/your-turn.mp3" />
+		<resource-file src="www/res/sounds/you-wouldnt-believe.mp3" target="Resources/you-wouldnt-believe.mp3" />
+
+	</platform>
+
+  <!-- wp8 -->
+  <platform name="wp8">
+
+    <config-file target="config.xml" parent="/*">
+      <feature name="PushPlugin">
+        <param name="wp-package" value="PushPlugin"/>
+      </feature>
+    </config-file>
+
+    <config-file target="Properties/WMAppManifest.xml" parent="/Deployment/App/Capabilities">
+      <Capability Name="ID_CAP_PUSH_NOTIFICATION"/>
+    </config-file>
+
+    <source-file src="src/wp8/PushPlugin.cs" />
+    <framework src="src/wp8/Newtonsoft.Json.dll" custom="true" />
+
+  </platform>
+
+</plugin>
