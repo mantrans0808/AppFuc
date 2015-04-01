@@ -1,9 +1,9 @@
-﻿<?xml version="1.1" encoding="UTF-8" ?>
+﻿<?xml version="1.2" encoding="UTF-8" ?>
 	<widget xmlns   = "http://www.w3.org/ns/widgets"
-		xmlns:gap   = "http://phonegap.com/ns/1.0"
+		xmlns:gap   = "http://phonegap.com/ns/1.2"
 		id          = "co.kmedia.fucs"
-		versionCode = "1.1" 
-		version     = "1.1" >
+		versionCode = "1.2" 
+		version     = "1.2" >
 
 	<preference name="phonegap-version" value="3.5.0" />
 	<preference name="orientation" value="portrait" />
