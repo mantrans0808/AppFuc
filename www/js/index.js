@@ -46,48 +46,54 @@ var app = {
             Puship.GCM.Register(GCMCode,
             {
                 successCallback: function (pushipresult){
-                    navigator.notification.alert("device registered with DeviceId:" + pushipresult.DeviceId);
+                    // navigator.notification.alert("device registered with DeviceId:" + pushipresult.DeviceId);
+                    // console.log("device registered with DeviceId:" + pushipresult.DeviceId);
                 },
                 failCallback: function (pushipresult){
-                    navigator.notification.alert("error during registration: "+ JSON.stringify(pushipresult));
+                    //navigator.notification.alert("error during registration: "+ JSON.stringify(pushipresult));
+                    // console.log("error during registration: "+ JSON.stringify(pushipresult));
                 }
             });
         } else if (Puship.Common.GetCurrentOs()==Puship.OS.IOS){
             Puship.APNS.Register(
             {
                 successCallback: function (pushipresult){
-                    navigator.notification.alert("device registered with DeviceId:" + pushipresult.DeviceId);
+                    // navigator.notification.alert("device registered with DeviceId:" + pushipresult.DeviceId);
+                    // console.log("device registered with DeviceId:" + pushipresult.DeviceId);
                 },
                 failCallback: function (pushipresult){
-                    navigator.notification.alert("error during registration: "+ JSON.stringify(pushipresult));
+                    // navigator.notification.alert("error during registration: "+ JSON.stringify(pushipresult));
+                    // console.log("error during registration: "+ JSON.stringify(pushipresult));
                 }
             });
         } else if (Puship.Common.GetCurrentOs()==Puship.OS.WP){
             Puship.WP.Register(
             {
                 successCallback: function (pushipresult){
-                    navigator.notification.alert("device registered with DeviceId:" + pushipresult.DeviceId);
+                    // navigator.notification.alert("device registered with DeviceId:" + pushipresult.DeviceId);
+                    // console.log("device registered with DeviceId:" + pushipresult.DeviceId);
                 },
                 failCallback: function (pushipresult){
-                    navigator.notification.alert("error during registration: "+ JSON.stringify(pushipresult));
+                    // navigator.notification.alert("error during registration: "+ JSON.stringify(pushipresult));
+                    // console.log("error during registration: "+ JSON.stringify(pushipresult));
                 }
             });
         } else {
-            Console.log("Not supported platform");
+            // Console.log("Not supported platform");
         }
 
         Puship.Common.OnPushReceived(function(event) {
             
-            console.log('push received');
+            // console.log('push received');
             
             try
             {
-                alert(event.notification.Alert);
+                // alert(event.notification.Alert);
                 location.href = "novedades.html";
             }
             catch(err)
             {
-                console.warn("Cannot display alert in background");
+                // console.warn("Cannot display alert in background");
             }
         });
 
