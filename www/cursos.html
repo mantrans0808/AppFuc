@@ -181,7 +181,7 @@
                 var datos_curso = document.getElementById("datos_curso").value;
                 var comentarios = document.getElementById("comentarios").value;
 
-                if( nombres_apellidos.length > 0 && num_documento.length > 9 && email.length )
+                if( nombres_apellidos.length > 0 && num_documento.length > 8 && email.length )
                 {
                     $.get( "http://fucs.kmedia.co/app/inscripciones.php?nombres_apellidos="+nombres_apellidos+"&num_documento="+num_documento+"&email="+email+"&telefono="+telefono+"&datos_curso="+datos_curso+"&comentarios="+comentarios, function( data ) {
 
@@ -210,7 +210,7 @@
        <div data-role="navbar">
         <ul>
             <li><a href="Novedades.html">Novedades</a></li>
-             <li><a href="http://www.fucsalud.edu.co/index.php/es/pqrs">PQR'S</a></li>
+            <li><a href="http://www.fucsalud.edu.co/index.php/es/pqrs">PQR'S</a></li>
             <li><a href="ubicacion.html">Sedes y Residencias</a></li>
         </ul>
     </div><!-- /navbar -->

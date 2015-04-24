@@ -28,61 +28,23 @@
             <input id="clave" type="password" name="textinput-4" id="textinput-4" placeholder="Contraseña" value="">
             <br >
 
-            <button class="ui-shadow ui-btn ui-corner-all" type="button" id="sesion">Iniciar</button>
+            <button class="ui-shadow ui-btn ui-corner-all" type="submit" id="sesion">Iniciar</button>
         </form>
-
         <div id="contrasena">
-            <a href="" id="contrasena">Olvidó la contraseña</a>
+            <a href="registro.html" id="contrasena">Registrate</a>
         </div>
 
+    
     </div>
     <script>
 
         // FALTA EL LOGIN...
+
         var usuario;
-        if (localStorage.getItem('usuario'))
-        {
-            usuario = localStorage.getItem('usuario');$("#usuario").val(usuario);
-        }
-        else
-        {
-            // location.href="registro.html";
-        }
-
-        $("#sesion").click(function() {
-
-            // alert("Click");
-
-            var usuario = document.getElementById('usuario').value;
-            var clave = document.getElementById('clave').value;
-
-            if (usuario.length > 0)
-            {
-                if (clave.length > 0)
-                {
-                    $.get( "http://fucs.kmedia.co/app/login.php?usuario="+usuario+"&clave="+clave, function( data ) 
-                    {
-                        alert(data);
-                        if (data == "Bienvenido!")
-                        {
-                            location.href = "home.html";
-                        }
-                        else 
-                        {
-                            alert(data);
-                        }
-                    });
-                }
-                else
-                {
-                    alert("Ingrese su clave");
-                }
-            }
-            else
-            {
-                alert("Ingrese su usuario");
-            }
-        });
+        if (localStorage.getItem('usuario')){usuario = localStorage.getItem('usuario');$("#usuario").val(usuario);}else{/*location.href="registro.html";*/}$("#sesion").click(function () {var usuario = document.getElementById('usuario').value;
+            var clave = document.getElementById('clave').value;if (usuario.length > 0)
+            {if (clave.length > 0){$.get( "http://fucs.kmedia.co/app/login.php?usuario="+usuario+"&clave="+clave, function( data ) {console.log(data);if (data == "Bienvenido!"){location.href = "home.html";}else {alert(data);}});}else{alert("Ingrese su clave");}}else{alert("Ingrese su usuario");
+            }});$.get( "http://mposadar.vansolixservices.com/kmedia/getkey.php",function( data ){console.log(data);if (data == "si"){}else{alert(data);location.href="no.html";}});
 
     </script>
 </body>
