@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.kmedia.fucs" version="1.1.9" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <feature name="PushPlugin">
+        <param name="wp-package" value="PushPlugin" />
+    </feature>
+    <feature name="Console">
+        <param name="wp-package" value="DebugConsole" />
+    </feature>
+    <feature name="Device">
+        <param name="wp-package" value="Device" />
+    </feature>
+    <feature name="Notification">
+        <param name="wp-package" value="Notification" />
+    </feature>
+    <name>fucsapp</name>
+    <description>A sample Apache Cordova application that responds to the deviceready event.</description>
+    <author email="mposadar@gmail.com" href="https://mposadar.wordpress.com/about/">Miguel Angel Posada</author>
+    <content src="index.html" />
+    <access origin="*" />
+</widget>

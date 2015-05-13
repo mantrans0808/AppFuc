@@ -37,16 +37,15 @@
         <p>Solicita mas informacion de nuestros programas:</p>
     <form action="" method=""> 
        <p>Datos de entidad</p>
-        <input id="nombre" type="text" name="textinput-4" id="textinput-4" placeholder="Nombres Apellidos" value="">
-        <input id="email" type="text" name="textinput-4" id="textinput-4" placeholder="Email" value="">
-        <input id="telefono" type="text" name="textinput-4" id="textinput-4" placeholder="Telefono" value="">
-        <input id="datos_curso" type="text" name="textinput-4" id="textinput-4" placeholder="Datos del curso" value="">
+        <input id="nombre" type="text" name="textinput-4" placeholder="Nombres Apellidos" value="">
+        <input id="email" type="text" name="textinput-4" placeholder="Email" value="">
+        <input id="telefono" type="text" name="textinput-4" placeholder="Telefono" value="">
+        <input id="datos_curso" type="text" name="textinput-4" placeholder="Datos del curso" value="">
     
         <textarea id="comentarios" name="comentarios" rows="10" cols="40" placeholder="Mensaje"></textarea>
 
         <br>
-        <button class="ui-shadow ui-btn ui-corner-all" type="submit" id="sesion">Enviar</button>
-        <button class="ui-shadow ui-btn ui-corner-all" type="submit" id="sesion">Borrar</button>
+        <button class="ui-shadow ui-btn ui-corner-all" type="button" id="sesion">Enviar</button>
         
     
     </form>
@@ -82,20 +81,22 @@
         
         </ul>
     </div><!-- /panel -->
+  
+    </div>
 
     <script>
 
-    function guardar_inscripcion()
-      {
+    $("#sesion").click(function(){
+
           var nombre = document.getElementById("nombre").value;
           var email = document.getElementById("email").value;
           var telefono = document.getElementById("telefono").value;
           var datos_curso = document.getElementById("datos_curso").value;
           var comentarios = document.getElementById("comentarios").value;
 
-          if( nombres_apellidos.length > 0 && num_documento.length > 9 && email.length )
+          if( nombre.length > 0 && datos_curso.length > 0 && email.length > 0 )
           {
-              $.get( "http://fucs.kmedia.co/app/info.php?nombre="+nombre+"&email="+email+"&email="+email+"&telefono="+telefono+"&datos_curso="+datos_curso+"&comentarios="+comentarios, function( data ) {
+              $.get( "http://fucs.kmedia.co/app/info.php?nombre="+nombre+"&email="+email+"&telefono="+telefono+"&datos_curso="+datos_curso+"&comentarios="+comentarios, function( data ) {
 
                       alert(data);
                       if (data == "Gracias!")
@@ -110,10 +111,8 @@
               alert("Complete el formulario");
           }
 
-      }
+      });
 
     </script>
-  
-    </div>
 </body>
 </html> 

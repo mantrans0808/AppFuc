@@ -53,6 +53,7 @@ C:\Users\vxadmin\Documents\MP\KMEDIA\FUCS\fucsapp\platforms\android\assets\www\I
 C:\Users\vxadmin\Documents\MP\KMEDIA\FUCS\fucsapp\platforms\android\assets\www\InternaNovedades.html \
 C:\Users\vxadmin\Documents\MP\KMEDIA\FUCS\fucsapp\platforms\android\assets\www\js \
 C:\Users\vxadmin\Documents\MP\KMEDIA\FUCS\fucsapp\platforms\android\assets\www\login.html \
+C:\Users\vxadmin\Documents\MP\KMEDIA\FUCS\fucsapp\platforms\android\assets\www\no.html \
 C:\Users\vxadmin\Documents\MP\KMEDIA\FUCS\fucsapp\platforms\android\assets\www\Novedades.html \
 C:\Users\vxadmin\Documents\MP\KMEDIA\FUCS\fucsapp\platforms\android\assets\www\plugins \
 C:\Users\vxadmin\Documents\MP\KMEDIA\FUCS\fucsapp\platforms\android\assets\www\PQR.html \
@@ -109,6 +110,7 @@ C:\Users\vxadmin\Documents\MP\KMEDIA\FUCS\fucsapp\platforms\android\assets\www\i
 C:\Users\vxadmin\Documents\MP\KMEDIA\FUCS\fucsapp\platforms\android\assets\www\images\Diplomados\images\Diplomado1.png \
 C:\Users\vxadmin\Documents\MP\KMEDIA\FUCS\fucsapp\platforms\android\assets\www\images\extension\Titulo.png \
 C:\Users\vxadmin\Documents\MP\KMEDIA\FUCS\fucsapp\platforms\android\assets\www\images\extension\TituloMedida.png \
+C:\Users\vxadmin\Documents\MP\KMEDIA\FUCS\fucsapp\platforms\android\assets\www\images\Home\bttn-solicita.png \
 C:\Users\vxadmin\Documents\MP\KMEDIA\FUCS\fucsapp\platforms\android\assets\www\images\Home\Congresos.png \
 C:\Users\vxadmin\Documents\MP\KMEDIA\FUCS\fucsapp\platforms\android\assets\www\images\Home\Cursos.png \
 C:\Users\vxadmin\Documents\MP\KMEDIA\FUCS\fucsapp\platforms\android\assets\www\images\Home\Datos.png \
@@ -117,6 +119,14 @@ C:\Users\vxadmin\Documents\MP\KMEDIA\FUCS\fucsapp\platforms\android\assets\www\i
 C:\Users\vxadmin\Documents\MP\KMEDIA\FUCS\fucsapp\platforms\android\assets\www\images\Home\evaluacion.png \
 C:\Users\vxadmin\Documents\MP\KMEDIA\FUCS\fucsapp\platforms\android\assets\www\images\Home\extension.png \
 C:\Users\vxadmin\Documents\MP\KMEDIA\FUCS\fucsapp\platforms\android\assets\www\images\Home\Facebook.png \
+C:\Users\vxadmin\Documents\MP\KMEDIA\FUCS\fucsapp\platforms\android\assets\www\images\Home\Ios1.png \
+C:\Users\vxadmin\Documents\MP\KMEDIA\FUCS\fucsapp\platforms\android\assets\www\images\Home\Ios2.png \
+C:\Users\vxadmin\Documents\MP\KMEDIA\FUCS\fucsapp\platforms\android\assets\www\images\Home\Ios3.png \
+C:\Users\vxadmin\Documents\MP\KMEDIA\FUCS\fucsapp\platforms\android\assets\www\images\Home\Ios4.png \
+C:\Users\vxadmin\Documents\MP\KMEDIA\FUCS\fucsapp\platforms\android\assets\www\images\Home\Ios5.png \
+C:\Users\vxadmin\Documents\MP\KMEDIA\FUCS\fucsapp\platforms\android\assets\www\images\Home\Ios6.png \
+C:\Users\vxadmin\Documents\MP\KMEDIA\FUCS\fucsapp\platforms\android\assets\www\images\Home\Ios7.png \
+C:\Users\vxadmin\Documents\MP\KMEDIA\FUCS\fucsapp\platforms\android\assets\www\images\Home\Ios8.png \
 C:\Users\vxadmin\Documents\MP\KMEDIA\FUCS\fucsapp\platforms\android\assets\www\images\Home\ProgramasAlaMedida.png \
 C:\Users\vxadmin\Documents\MP\KMEDIA\FUCS\fucsapp\platforms\android\assets\www\images\Home\Programate.png \
 C:\Users\vxadmin\Documents\MP\KMEDIA\FUCS\fucsapp\platforms\android\assets\www\images\Home\twitter.png \

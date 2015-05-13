@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.kmedia.fucs" version="1.1.9" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:rim="http://www.blackberry.com/ns/widgets">
+    <feature name="Device" value="Device" />
+    <feature name="Notification" value="Notification" />
+    <feature name="Geolocation" value="Geolocation" />
+    <rim:permissions>
+        <rim:permit>read_device_identifying_information</rim:permit>
+        <rim:permit>read_geolocation</rim:permit>
+    </rim:permissions>
+    <name>fucsapp</name>
+    <description>A sample Apache Cordova application that responds to the deviceready event.</description>
+    <author email="mposadar@gmail.com" href="https://mposadar.wordpress.com/about/">Miguel Angel Posada</author>
+    <content src="index.html" />
+    <access origin="*" />
+</widget>

@@ -1,0 +1,882 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProductVersion>10.0.20506</ProductVersion>
+        <SchemaVersion>2.0</SchemaVersion>
+        <ProjectGuid>{3677C1B7-D68B-4CF9-BF8A-E869D437A6DF}</ProjectGuid>
+        <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+        <OutputType>Library</OutputType>
+        <AppDesignerFolder>Properties</AppDesignerFolder>
+        <RootNamespace>com.kmedia.fucs</RootNamespace>
+        <AssemblyName>com.kmedia.fucs</AssemblyName>
+        <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
+        <SilverlightVersion>
+        </SilverlightVersion>
+        <TargetFrameworkProfile>
+        </TargetFrameworkProfile>
+        <TargetFrameworkIdentifier>WindowsPhone</TargetFrameworkIdentifier>
+        <SilverlightApplication>true</SilverlightApplication>
+        <SupportedCultures>en-US</SupportedCultures>
+        <XapOutputs>true</XapOutputs>
+        <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+        <XapFilename>CordovaAppProj_$(Configuration)_$(Platform).xap</XapFilename>
+        <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+        <SilverlightAppEntry>com.kmedia.fucs.App</SilverlightAppEntry>
+        <ValidateXaml>true</ValidateXaml>
+        <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+        <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+        <BackgroundAgentType />
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>Bin\Debug</OutputPath>
+        <DefineConstants>TRACE;DEBUG;SILVERLIGHT;WINDOWS_PHONE;WP8</DefineConstants>
+        <NoStdLib>true</NoStdLib>
+        <NoConfig>true</NoConfig>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+        <Prefer32Bit>false</Prefer32Bit>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>Bin\Release</OutputPath>
+        <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE;WP8</DefineConstants>
+        <NoStdLib>true</NoStdLib>
+        <NoConfig>true</NoConfig>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+        <Prefer32Bit>false</Prefer32Bit>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+        <DebugSymbols>true</DebugSymbols>
+        <OutputPath>Bin\x86\Debug</OutputPath>
+        <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+        <NoStdLib>true</NoStdLib>
+        <DebugType>full</DebugType>
+        <PlatformTarget>
+        </PlatformTarget>
+        <ErrorReport>prompt</ErrorReport>
+        <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+        <Optimize>false</Optimize>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+        <OutputPath>Bin\x86\Release</OutputPath>
+        <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+        <Optimize>true</Optimize>
+        <NoStdLib>true</NoStdLib>
+        <DebugType>pdbonly</DebugType>
+        <PlatformTarget>
+        </PlatformTarget>
+        <ErrorReport>prompt</ErrorReport>
+        <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+        <Prefer32Bit>false</Prefer32Bit>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+        <DebugSymbols>true</DebugSymbols>
+        <OutputPath>Bin\ARM\Debug</OutputPath>
+        <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+        <NoStdLib>true</NoStdLib>
+        <DebugType>full</DebugType>
+        <PlatformTarget>
+        </PlatformTarget>
+        <ErrorReport>prompt</ErrorReport>
+        <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+        <Prefer32Bit>false</Prefer32Bit>
+        <Optimize>false</Optimize>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+        <OutputPath>Bin\ARM\Release</OutputPath>
+        <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+        <Optimize>true</Optimize>
+        <NoStdLib>true</NoStdLib>
+        <DebugType>pdbonly</DebugType>
+        <PlatformTarget>
+        </PlatformTarget>
+        <ErrorReport>prompt</ErrorReport>
+        <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+        <Prefer32Bit>false</Prefer32Bit>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+        <DebugSymbols>true</DebugSymbols>
+        <OutputPath>bin\x64\Debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+        <NoStdLib>true</NoStdLib>
+        <DebugType>full</DebugType>
+        <PlatformTarget>x64</PlatformTarget>
+        <ErrorReport>prompt</ErrorReport>
+        <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+        <OutputPath>bin\x64\Release\</OutputPath>
+        <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+        <Optimize>true</Optimize>
+        <NoStdLib>true</NoStdLib>
+        <DebugType>pdbonly</DebugType>
+        <PlatformTarget>x64</PlatformTarget>
+        <ErrorReport>prompt</ErrorReport>
+        <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    </PropertyGroup>
+    <ItemGroup>
+        <Compile Include="App.xaml.cs">
+            <DependentUpon>App.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="cordovalib\Commands\BaseCommand.cs" />
+        <Compile Include="cordovalib\JSON\JsonHelper.cs" />
+        <Compile Include="cordovalib\BrowserMouseHelper.cs" />
+        <Compile Include="cordovalib\CommandFactory.cs" />
+        <Compile Include="cordovalib\ConfigHandler.cs" />
+        <Compile Include="cordovalib\ConsoleHelper.cs" />
+        <Compile Include="cordovalib\CordovaCommandCall.cs" />
+        <Compile Include="cordovalib\CordovaView.xaml.cs">
+            <DependentUpon>CordovaView.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="cordovalib\IBrowserDecorator.cs" />
+        <Compile Include="cordovalib\ImageExifHelper.cs" />
+        <Compile Include="cordovalib\MimeTypeMapper.cs" />
+        <Compile Include="cordovalib\NativeExecution.cs" />
+        <Compile Include="cordovalib\OrientationHelper.cs" />
+        <Compile Include="cordovalib\PluginResult.cs" />
+        <Compile Include="cordovalib\ScriptCallback.cs" />
+        <Compile Include="cordovalib\XHRHelper.cs" />
+        <Compile Include="MainPage.xaml.cs">
+            <DependentUpon>MainPage.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="Properties\AssemblyInfo.cs" />
+        <Page Include="Plugins\org.apache.cordova.dialogs\NotificationBox.xaml">
+            <SubType>Designer</SubType>
+            <Generator>MSBuild:Compile</Generator>
+        </Page>
+    </ItemGroup>
+    <ItemGroup>
+        <ApplicationDefinition Include="App.xaml">
+            <SubType>Designer</SubType>
+            <Generator>MSBuild:Compile</Generator>
+        </ApplicationDefinition>
+        <Page Include="cordovalib\CordovaView.xaml">
+            <Generator>MSBuild:Compile</Generator>
+            <SubType>Designer</SubType>
+        </Page>
+        <Page Include="MainPage.xaml">
+            <SubType>Designer</SubType>
+            <Generator>MSBuild:Compile</Generator>
+        </Page>
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="config.xml" />
+        <Content Include="Images\appbar.back.rest.png" />
+        <Content Include="Images\appbar.close.rest.png" />
+        <Content Include="Images\appbar.feature.video.rest.png" />
+        <Content Include="Images\appbar.next.rest.png" />
+        <Content Include="Images\appbar.save.rest.png" />
+        <Content Include="Images\appbar.stop.rest.png" />
+        <None Include="cordova\lib\build.js" />
+        <None Include="cordova\lib\clean.js" />
+        <None Include="cordova\lib\target-list.js" />
+        <None Include="cordova\build.bat" />
+        <None Include="cordova\clean.bat" />
+        <None Include="cordova\lib\install-device.bat" />
+        <None Include="cordova\lib\install-emulator.bat" />
+        <None Include="cordova\lib\list-devices.bat" />
+        <None Include="cordova\lib\list-emulator-images.bat" />
+        <None Include="cordova\lib\list-started-emulators.bat" />
+        <None Include="cordova\lib\start-emulator.bat" />
+        <None Include="cordova\log.bat" />
+        <None Include="cordova\run.bat" />
+        <None Include="cordova\version.bat" />
+        <Content Include="VERSION" />
+        <None Include="Properties\AppManifest.xml">
+            <SubType>Designer</SubType>
+        </None>
+        <None Include="Properties\WMAppManifest.xml">
+            <SubType>Designer</SubType>
+        </None>
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="ApplicationIcon.png">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <Content Include="Background.png">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <Content Include="SplashScreenImage.jpg" />
+    </ItemGroup>
+    <ItemGroup>
+        <WCFMetadata Include="Service References\" />
+    </ItemGroup>
+    <ItemGroup>
+        <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    </ItemGroup>
+    <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
+    <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
+    <ProjectExtensions />
+    <PropertyGroup>
+    </PropertyGroup>
+    <PropertyGroup>
+        <PostBuildEvent>
+        </PostBuildEvent>
+    </PropertyGroup>
+    <ItemGroup>
+        <Compile Include="Plugins\com.phonegap.plugins.Puship\PushPlugin.cs" />
+    </ItemGroup>
+    <ItemGroup>
+        <Reference Include="Newtonsoft.Json">
+            <HintPath>plugins\com.phonegap.plugins.Puship\Newtonsoft.Json.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="Plugins\org.apache.cordova.console\DebugConsole.cs" />
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="Plugins\org.apache.cordova.device\Device.cs" />
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="Plugins\org.apache.cordova.dialogs\Notification.cs" />
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="Plugins\org.apache.cordova.dialogs\NotificationBox.xaml.cs">
+            <DependentUpon>NotificationBox.xaml</DependentUpon>
+        </Compile>
+    </ItemGroup>
+    <ItemGroup />
+    <ItemGroup>
+        <Content Include="Plugins\org.apache.cordova.dialogs\notification-beep.wav" />
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="Plugins\org.apache.cordova.geolocation\Geolocation.cs" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\Categoria.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\CategoriaCursos.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\config.xml" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\congresos.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\cordova.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\cordova_plugins.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\css\index.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\css\jquery.mobile.custom.structure.min.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\css\jquery.mobile.custom.theme.min.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\css\style.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\css\style.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\cursos.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\cursosinterna.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\Diplomados.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\educacioncontinua.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\home.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\icon.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Barra.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\BarraMenu.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Buscar.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Congresos\Thumbs.db" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Congresos\Titulo.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Continuada\Info.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Continuada\Thumbs.db" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Cursos\administrativos.jpg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Cursos\clinicos.jpg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Cursos\enfermeras.jpg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Cursos\images\Curso1.jpg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Cursos\laboratorio.jpg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Cursos\Medicos.jpg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Cursos\Thumbs.db" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Cursos\Titulo.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Diplomados\administrativos.jpg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Diplomados\busqueda.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Diplomados\clinicos.jpg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Diplomados\enfermeras.jpg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Diplomados\imagen.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Diplomados\images\Diplomado1.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Diplomados\laboratorio.jpg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Diplomados\Medicos.jpg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Diplomados\Thumbs.db" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Diplomados\titulo.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\extension\Thumbs.db" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\extension\Titulo.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\extension\TituloMedida.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Header.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Header1.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\HeaderRegistro.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Home\bttn-solicita.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Home\Congresos.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Home\Cursos.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Home\Datos.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Home\Diplomados.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Home\EducacionContinua.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Home\evaluacion.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Home\extension.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Home\Facebook.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Home\Ios1.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Home\Ios2.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Home\Ios3.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Home\Ios4.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Home\Ios5.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Home\Ios6.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Home\Ios7.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Home\Ios8.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Home\ProgramasAlaMedida.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Home\Programate.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Home\Thumbs.db" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Home\twitter.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Icomenu.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Icomenu1.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Logo.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Menu.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Menu1.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Novedades\Programate.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Novedades\Thumbs.db" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Novedades\Titulo.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Thumbs.db" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\images\Titulo.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\img\logo.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\img\Thumbs.db" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\index_cordova.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\Interna.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\InternaCategoria.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\internaCongresos.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\InternaExt.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\InternaNovedades.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\js\index.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\js\jquery-2.1.1.min.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\js\jquery.mobile.custom.min.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\js\less-1.7.4.min.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\login.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\no.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\Novedades.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\plugins\com.phonegap.plugins.Puship\www\PushipNotification.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\plugins\com.phonegap.plugins.Puship\www\PushNotification.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\plugins\org.apache.cordova.console\www\console-via-logger.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\plugins\org.apache.cordova.console\www\logger.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\plugins\org.apache.cordova.device\www\device.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\plugins\org.apache.cordova.dialogs\www\notification.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\PQR.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\ProgramaExtension.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\ProgramasMedida.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\Programate.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\registro.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\icons\android\icon-36-ldpi.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\icons\android\icon-48-mdpi.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\icons\android\icon-72-hdpi.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\icons\android\icon-96-xhdpi.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\icons\black-berry\icon-150.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\icons\black-berry\icon-86.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\icons\ios\icon-57-2x.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\icons\ios\icon-57.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\icons\ios\icon-72-2x.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\icons\ios\icon-72.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\icons\windows-phone\icon-173-tile.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\icons\windows-phone\icon-48.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\icons\windows-phone\icon-62-tile.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\a-ha-moment.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\a-taste-of-the-whip.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\abduction.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\ache.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\all-of-a-sudden.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\are-you-kidding.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\argh-my-eyes.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\attracted.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\awareness.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\base.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\blocker.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\braking.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\cable-unplugged.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\cause-and-effect.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\chafing.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\closed.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\code.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\coins.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\come-to-daddy.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\communication-channel.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\credulous.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\croak.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\cyberincident.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\decay.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\does-not-behave.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\dropped-spinner.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\electronic.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\end-point-reached.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\error-3.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\et-voila.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\fallbackring.ogg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\fallin.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\fast-turnaround.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\finger-push.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\genuinely-interested.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\gets-in-the-way.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\good-morning.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\gummy-sweep.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\happy-ending.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\hey-im-here-too.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\hiccup.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\i-saw-you.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\in-your-plate.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\inquisitiveness.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\job-done.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\jubilation.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\just-like-magic.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\just-like-that.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\knob.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\long-chime-sound.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\machine-poo.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\may-i-have-your-attention.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\me.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\munchausen.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\net.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\no-trespassing.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\no-way.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\oh-really.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\on-serious-matters.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\oringz-pack-nine-15.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\pedantic.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\pizzicato.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\pluck.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\professionals.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\pull-back.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\put-down.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\question-raised.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\scissors.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\see-im-smart.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\served.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\shut-your-mouth.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\slap.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\solemn.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\strongly-attached.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\surprise-on-a-spring.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\swift.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\thats-a-no.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\thats-nasty.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\the-squeaky-wheel-gets-the-grease.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\trained.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\what.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\whatever.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\will-you.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\worthwhile.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\yep.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\you-know.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\you-wouldnt-believe.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\sounds\your-turn.mp3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\SoliciteInfo.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\Thumbs.db" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\ubicacion.html" />
+    </ItemGroup>
+</Project>

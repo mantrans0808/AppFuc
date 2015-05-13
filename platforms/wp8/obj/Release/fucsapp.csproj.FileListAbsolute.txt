@@ -1,0 +1,16 @@
+C:\Users\vxadmin\Documents\MP\KMEDIA\FUCS\fucsapp\platforms\wp8\Bin\Release\ApplicationIcon.png
+C:\Users\vxadmin\Documents\MP\KMEDIA\FUCS\fucsapp\platforms\wp8\Bin\Release\Background.png
+C:\Users\vxadmin\Documents\MP\KMEDIA\FUCS\fucsapp\platforms\wp8\Bin\Release\com.kmedia.fucs.dll
+C:\Users\vxadmin\Documents\MP\KMEDIA\FUCS\fucsapp\platforms\wp8\Bin\Release\com.kmedia.fucs.pdb
+C:\Users\vxadmin\Documents\MP\KMEDIA\FUCS\fucsapp\platforms\wp8\Bin\Release\AppManifest.xaml
+C:\Users\vxadmin\Documents\MP\KMEDIA\FUCS\fucsapp\platforms\wp8\Bin\Release\CordovaAppProj_Release_AnyCPU.xap
+C:\Users\vxadmin\Documents\MP\KMEDIA\FUCS\fucsapp\platforms\wp8\Bin\Release\Newtonsoft.Json.dll
+C:\Users\vxadmin\Documents\MP\KMEDIA\FUCS\fucsapp\platforms\wp8\obj\Release\fucsapp.csprojResolveAssemblyReference.cache
+C:\Users\vxadmin\Documents\MP\KMEDIA\FUCS\fucsapp\platforms\wp8\obj\Release\App.g.cs
+C:\Users\vxadmin\Documents\MP\KMEDIA\FUCS\fucsapp\platforms\wp8\obj\Release\Plugins\org.apache.cordova.dialogs\NotificationBox.g.cs
+C:\Users\vxadmin\Documents\MP\KMEDIA\FUCS\fucsapp\platforms\wp8\obj\Release\cordovalib\CordovaView.g.cs
+C:\Users\vxadmin\Documents\MP\KMEDIA\FUCS\fucsapp\platforms\wp8\obj\Release\MainPage.g.cs
+C:\Users\vxadmin\Documents\MP\KMEDIA\FUCS\fucsapp\platforms\wp8\obj\Release\com.kmedia.fucs.g.resources
+C:\Users\vxadmin\Documents\MP\KMEDIA\FUCS\fucsapp\platforms\wp8\obj\Release\com.kmedia.fucs.dll
+C:\Users\vxadmin\Documents\MP\KMEDIA\FUCS\fucsapp\platforms\wp8\obj\Release\com.kmedia.fucs.pdb
+C:\Users\vxadmin\Documents\MP\KMEDIA\FUCS\fucsapp\platforms\wp8\obj\Release\XapCacheFile.xml

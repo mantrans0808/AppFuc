@@ -87,8 +87,7 @@
         <div id="cursos_clinicos" style="display:none;"></div>
         <div id="cursos_laboratorio" style="display:none;"></div>
         <div id="cursos_administrativo" style="display:none;"></div>
-
-        <script>
+    <script>
             $("#cursos_medicina").load('http://fucs.kmedia.co/app/cursos.php', {FACULTAD:'Facultad de Medicina'}, function(){});
             $("#cursos_enfermeria").load('http://fucs.kmedia.co/app/cursos.php', {FACULTAD:'Facultad de Enfermería'}, function(){});
             $("#cursos_clinicos").load('http://fucs.kmedia.co/app/cursos.php', {FACULTAD:'Facultad de Citohistología'}, function(){});
@@ -181,7 +180,7 @@
                 var datos_curso = document.getElementById("datos_curso").value;
                 var comentarios = document.getElementById("comentarios").value;
 
-                if( nombres_apellidos.length > 0 && num_documento.length > 9 && email.length )
+                if( nombres_apellidos.length > 0 && num_documento.length > 6 && email.length )
                 {
                     $.get( "http://fucs.kmedia.co/app/inscripciones.php?nombres_apellidos="+nombres_apellidos+"&num_documento="+num_documento+"&email="+email+"&telefono="+telefono+"&datos_curso="+datos_curso+"&comentarios="+comentarios, function( data ) {
 
@@ -210,7 +209,7 @@
        <div data-role="navbar">
         <ul>
             <li><a href="Novedades.html">Novedades</a></li>
-            <li><a href="PQR.html">Preguntas Frecuentes</a></li>
+            <li><a href="http://www.fucsalud.edu.co/index.php/es/pqrs">PQR'S</a></li>
             <li><a href="ubicacion.html">Sedes y Residencias</a></li>
         </ul>
     </div><!-- /navbar -->
@@ -222,7 +221,7 @@
    <div data-role="panel" data-display="push" data-theme="a" id="nav-panel">
            <ul data-role="listview">
            
-                <li><a href="index.html">Home</a></li>
+                <li><a href="home.html">Home</a></li>
                 <li><a href="educacioncontinua.html">Educación Continuada</a></li>
                 <li><a href="Diplomados.html">Diplomados</a></li>
                 <li><a href="cursos.html">Cursos</a></li>

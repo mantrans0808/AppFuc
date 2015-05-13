@@ -1,46 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>EDUCACION FUCS</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>EDUCACION FUCS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link rel="stylesheet" href="css/jquery.mobile.custom.structure.min.css">
-	<link rel="stylesheet" href="css/jquery.mobile.custom.theme.min.css">
+    <link rel="stylesheet" href="css/jquery.mobile.custom.structure.min.css">
+    <link rel="stylesheet" href="css/jquery.mobile.custom.theme.min.css">
+    
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/jquery.mobile.custom.min.js"></script>
+
+    <script src="js/less-1.7.4.min.js"></script>
+    <link rel="stylesheet/less" type="text/css" href="estilos.less" />
     <link rel="stylesheet" href="css/style.css">
-	<script src="js/jquery-2.1.1.min.js"></script>
-	<script src="js/jquery.mobile.custom.min.js"></script>
-
-	<script src="js/less-1.7.4.min.js"></script>
-	<link rel="stylesheet/less" type="text/css" href="estilos.less" />
 </head>
-<body>
-    
+<body >
     <div data-role="page" class="jqm-demos ui-responsive-panel" id="panel-responsive-page1" data-title="Educacion Fucs" data-url="panel-responsive-page1" style=" background-color:#040039;">
-    
+        
         <div data-role="header">
             <img src="images/HeaderRegistro.png"  alt="" >
         </div><!-- /header -->
 
-        <form action="" method=""> 
+        <form action="" method="" >
             <br>
-            <input id="nombre" type="text" name="textinput-4" id="textinput-4" placeholder="Nombre" value="">
-            <input id="usuario" type="text" name="textinput-4" id="textinput-4" placeholder="Usuario (e-mail)" value="">
-            <input id="clave" type="text" name="textinput-4" id="textinput-4" placeholder="Contraseña" value="">
-            <input id="clave2" type="text" name="textinput-4" id="textinput-4" placeholder="Re-Contraseña" value="">
-            <input id="profesion" type="text" name="textinput-4" id="textinput-4" placeholder="Profesión" value="">
-            <input id="area_interes" type="text" name="textinput-4" id="textinput-4" placeholder="Área de interés" value="">
-            <br>
-            <fieldset data-role="controlgroup">                
-                <label for="checkbox-2"><a>He leído y acepto la política de privacidad y las políticas de tratamiento</a></label>
-                <input type="checkbox" name="checkbox-2" id="checkbox-2">
-            </fieldset>
-            <br>
-            <button class="ui-shadow ui-btn ui-corner-all" type="submit" id="sesion">Registro</button>
-        
+            <input id="nombre" type="text" name="textinput-4" placeholder="Nombre" value="">
+            <input id="usuario" type="text" name="textinput-4" placeholder="Usuario" value="">
+            <input id="clave" type="password" name="textinput-4" placeholder="Contraseña" value="">
+            <input id="clave2" type="text" name="textinput-4" placeholder="Re-Contraseña" value="">
+            <input id="profesion" type="text" name="textinput-4" placeholder="Profesión" value="">
+            <input id="area_interes" type="text" name="textinput-4" placeholder="Area de interés" value="">
+            <br >
+            <button class="ui-shadow ui-btn ui-corner-all" type="button" id="sesion">Registrar</button>
         </form>
-    </div>
+        <div id="contrasena" style="text-align: center;">
+            <a href="index.html" rel="external">Login</a>
+        </div>
 
+    
+    </div>
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+    // Wait for device API libraries to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // device APIs are available
+    //
+    function onDeviceReady() {
+        
+    }
+
+    </script>
     <script>
 
         $("#sesion").click(function(){
@@ -70,12 +82,12 @@
                 }
                 else
                 {
-                    alert("Las claves no son iguales");
+                    navigator.notification.alert("Las claves no son iguales", "Validacion");
                 }
             }
             else
             {
-                alert("Complete el formulario");
+                navigator.notification.alert("Complete el formulario", "Validacion");
             }
 
         });
