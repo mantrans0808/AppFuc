@@ -39,7 +39,7 @@ var app = {
         var Puship = window.plugins.puship;
         Puship.EnableLog = true;
         // ID DEL APP EN PUSHIP
-        Puship.PushipAppId = "nHR5AgogmJgumM9"; // I.E.: puship_id = "h1mCVGaP9dtGnwG"
+        Puship.PushipAppId = "ZDZ7C0Czx794krq"; // I.E.: puship_id = "h1mCVGaP9dtGnwG"
 
         if (Puship.Common.GetCurrentOs()==Puship.OS.ANDROID){
             var GCMCode = "654011467087"; // This is the senderID provided by Google. I.E.: "28654934133"
@@ -89,7 +89,7 @@ var app = {
             try
             {
                 // alert(event.notification.Alert);
-                location.href = "novedades.html";
+                location.href = "Novedades.html";
             }
             catch(err)
             {
