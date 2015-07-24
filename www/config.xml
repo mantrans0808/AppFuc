@@ -13,6 +13,7 @@
 	<preference name="StatusBarOverlaysWebView" value="true" />
 	<preference name="StatusBarBackgroundColor" value="#000000" />
 	<gap:plugin name="com.phonegap.plugin.statusbar" />
+    <gap:plugin name="com.phonegap.plugins.Puship" />
 
 	<icon src="icon.png" />
 
